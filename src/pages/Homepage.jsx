@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import Slider from '../components/Slider'
 import image1 from '../assets/8.jpg'
 import Card3Presentation from '../components/Card3Presentation'
@@ -7,7 +6,7 @@ import Footer from '../components/Footer'
 const Homepage = () => {
   return (
     <div className='relative'>
-      <Navbar />
+      
       <Slider/>
       <Card3Presentation />
       <div className="w-screen h-screen flex- flex-col my-4 gap-10 overflow-hidden ">
