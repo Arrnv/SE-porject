@@ -1,11 +1,10 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import Slider from '../components/Slider'
 import tractor from '../assets/features-3-1-1.jpg'
 import Card3Presentation from '../components/Card3Presentation'
 import Footer from '../components/Footer'
 const Homepage = () => {
-  return (
+  return 
     <div className=''>
       <Navbar />
       <Slider/>
@@ -22,7 +21,6 @@ const Homepage = () => {
 
       </div>
       <Footer/>
-    </div>
   )
 }
 
