@@ -4,9 +4,9 @@ import tractor from '../assets/features-3-1-1.jpg'
 import Card3Presentation from '../components/Card3Presentation'
 import Footer from '../components/Footer'
 const Homepage = () => {
-  return 
+  return (
     <div className=''>
-      <Navbar />
+      
       <Slider/>
       <Card3Presentation />
       <div className="w-screen h-auto grid grid-cols-2 gap-4 overflow-hidden ">
@@ -21,7 +21,8 @@ const Homepage = () => {
 
       </div>
       <Footer/>
-  )
+    </div>
+  );
 }
 
 export default Homepage
