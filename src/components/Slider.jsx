@@ -1,9 +1,9 @@
 import React from 'react'
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import image1 from '../assets/pexels-pixabay-326055.jpg'
-import image2 from '../assets/pexels-philippe-donn-1133957.jpg'
-import image3 from '../assets/pexels-pixabay-206359.jpg'
+import image1 from '../assets/slide1.jpg'
+import image2 from '../assets/slide2.jpg'
+import image3 from '../assets/slide3.jpg'
 const Slider = () => {
   const fadeImages = [
     {
@@ -20,7 +20,7 @@ const Slider = () => {
     },
   ];
   return (
-    <div className="slide-container w-screen relative  align-middle h-auto rounded-3xl px-10">
+    <div className="slide-container w-screen relative  align-middle h-auto rounded-3xl px-10 m-auto mt-14">
     <Fade>
       {fadeImages.map((fadeImage, index) => (
          <div className='w-full h-screen rounded' key={index}>

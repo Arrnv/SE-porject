@@ -1,17 +1,60 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import tractor from '../assets/features-3-1-1.jpg'
-import Card3Presentation from '../components/Card3Presentation'
+import Card from '../components/Card'
 import Footer from '../components/Footer'
 import img5 from '../assets/rearth_logo.png'
 import achivement from '../assets/WhatsApp Image 2024-03-22 at 6.01.42 PM.jpeg'
+import image1 from '../assets/hcard1.png'
+import image2 from '../assets/hcard2.png'
+import image3 from '../assets/hcard3.png'
+import image4 from '../assets/hcard4.png'
 const Homepage = () => {
   return (
-    <div className=''>
+
+    <div className='overflow-x-hidden mx-auto'>
+
       
       <Slider/>
-      <Card3Presentation />
-      <div className="w-screen h-auto grid grid-cols-2 gap-5 overflow-hidden text-justify">
+      <div className="container mx-auto px-5">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-3 sm:p-8 place-items-center">
+        <Card
+          background="bg-[#f3faff]"
+          width="w-64"
+          heading="Technology"
+          description="A Mobile unit to convert agro unit into high gvc bio coal briquettes."
+          thumbnailSrc={image1}
+        />
+        <Card
+          background="bg-[#fefaf0]"
+          width="w-64"
+          heading="Best Team"
+          description="A team comprising skilled engineers,designers and technicians."
+          thumbnailSrc={image2}
+        />
+        <Card
+          background="bg-[#f3faff]"
+          width="w-64"
+          heading="Certificates"
+          description="We are certified by govt.of India i.e :DPIIT, NSIC, EIC,ISO, CE, DYMER."
+          thumbnailSrc={image3}
+        />
+        <Card
+          background="bg-[#f5e6ff]"
+          width="w-64"
+          heading="Our Goal"
+          description="We're focused on 'To make our planet a better place to live in.'"
+          thumbnailSrc={image4}
+        />
+      </div>
+    </div>
+      
+
+
+
+
+
+   <div className="w-screen h-auto grid grid-cols-2 gap-5 overflow-hidden text-justify">
         <div className="flex justify-end items-end bg-cover bg-center h-dvh rounded-r-xl " style={{backgroundImage: `url(${tractor})`}}> 
           <div className='h-52 w-40 bg-[#e5c32a] flex items-center justify-center text-center rounded-tl-xl rounded-br-xl' style={{ fontFamily: 'Gotham, sans-serif' }}>
               <h3 className="text-2xl font-bold">Agriculture Professional Leaders</h3>
@@ -65,6 +108,7 @@ const Homepage = () => {
       </div>
       <Footer/>
     </div>
+
   );
 }
 
