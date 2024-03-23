@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import 'flowbite';
 import image2 from '../assets/rearth_logo.png'
 
-
-
-
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +15,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='fixed top-0 left-0 right-0 z-40'>
+        <div className='top-0 left-0 right-0 z-40'>
             <nav className="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-2">
                     <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
