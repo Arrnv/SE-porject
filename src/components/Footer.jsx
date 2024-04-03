@@ -1,14 +1,15 @@
 import React from 'react';
+import logo from '../assets/rearth_logo.png'
 
 function Footer() {
   return (
-    <footer className="bg-[#034329] text-gray-300 py-8 mt-8">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-4 gap-4">
+    <footer className="bg-[#034329] text-gray-300 pt-16  mt-0">
+      <div className=" mx-auto  pt-16">
+        <div className="grid grid-cols-4 gap-16 pb-16 max-w-7xl mx-auto">
           {/* Section 1: HAB Image and Description */}
           <div>
-          {/* <img src={require('./hab_biomass_private_limited_logo.jpeg')} alt="HAB Logo" className="w-24 h-24 mb-4" /> */}
-            <p className="text-sm">We are a DPIIT recognised company by Govt of India, under Clean Tech and Green Technology domain.</p>
+          <img src={logo} alt="HAB Logo" className="w-24 h-16 " />
+            <p className="text-md text-justify">We are a DPIIT recognised company by Govt of India, under Clean Tech and Green Technology domain.</p>
           </div>
           {/* Section 2: Contact Information */}
           <div>
@@ -37,8 +38,8 @@ function Footer() {
           </div>
         </div>
         {/* Nested Footer */}
-        <footer className="bg-[#034329] text-gray-300 py-6 mt-8">
-          <div className="max-w-7xl mx-auto px-4">
+        <footer className="bg-[#199747] text-gray-300 pt-20 mt-8">
+          <div className="w-full px-16 pb-8">
             <div className="flex justify-between items-center">
               <p className="text-sm">&copy; 2024 HBPL. All rights reserved.</p>
               <div className="flex space-x-4">

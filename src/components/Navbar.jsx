@@ -22,7 +22,7 @@ const Navbar = () => {
             <nav className="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-2">
                     <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src={image2} className="h-10 w-25" alt="Rearth Logo" />
+                        <img src={image2} className="h-20 w-50" alt="Rearth Logo" />
                         {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Re-Earth</span> */}
                     </a>
                     <button
