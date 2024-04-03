@@ -9,7 +9,9 @@ import image3 from '../assets/hcard3.png'
 import image4 from '../assets/hcard4.png'
 const Homepage = () => {
   return (
+
     <div className='overflow-x-hidden mx-auto'>
+
       
       <Slider/>
       <div className="container mx-auto px-5">
@@ -62,7 +64,9 @@ const Homepage = () => {
 
       </div>
       <Footer/>
+
       </div>
+
   );
 }
 
