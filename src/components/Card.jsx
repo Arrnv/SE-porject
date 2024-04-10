@@ -11,10 +11,10 @@ function Card(props) {
           alt="image"
         />
       </div>
-      <h3 className={`text-[25px] pt-2 pl-6 pr-6 font-bold text-gray-600 block `}>
+      <h3 className={`text-[25px] pt-2 pl-6 pr-6 font-GothamBlack text-gray-600 block `}>
         {props.heading}
       </h3>
-      <p className={`font-normal text-black p-6 cursor-pointer text-lg duration-300 transition mt-2`}>
+      <p className={`font-GothamBook text-black p-6 cursor-pointer text-lg duration-300 transition mt-2`}>
         {props.description}
       </p>
       
