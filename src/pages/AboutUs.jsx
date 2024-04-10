@@ -55,29 +55,29 @@ function AboutUs() {
          
          <div className="container mx-auto ">
       <div className="grid gap-14 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-3 sm:p-6 place-items-center ">
-        <div className='onHover hover:bg-[#199747]'>
+        <div className='onHover hover:bg-[#199747] rounded-lg'>
         <Card
           // hover="bg-green-600"
-          width="w-96"
+          width="w-80"
           heading="Briquettes"
           description="Briquettes are bricks madeof leftover bits of wood and sawdust mixed with crop husk, additives and then compressed to give desired shape. These are widely used by industries in boilers . (CV:3800Cal/g)"
           thumbnailSrc={image1}
         />
         </div>
-        <div className='onHover hover:bg-[#199747]'>
+        <div className='onHover hover:bg-[#199747] rounded-lg'>
         <Card
           // hover="bg-green-600"
-          width="w-96"
+          width="w-80"
           heading="Pellets"
           description="A Bio Pellet is a small block of flammable biomass that can be used to produce heat as a fuel,mostly is smaller than briquettes widely used for Restaurants and domestic application.
           (3800Cal/g)"
           thumbnailSrc={image2}
         />
         </div>
-        <div className='onHover hover:bg-[#199747]'>
+        <div className='onHover hover:bg-[#199747] rounded-lg'>
         <Card
           // hover="bg-green-600"
-          width="w-96"
+          width="w-80"
           heading="Cowdung Woodlogs"
           description="It is a wood look alike log made by combination of cow dung and crop residues is fed into the hopper of the machine. These are widely used for last rituals and prayers.
           (CV:2000Cal/g)"
@@ -135,10 +135,10 @@ function AboutUs() {
           <h3 className='text-xl mb-2 font-normal tracking-normal'>PROFESSIONAL PEOPLE</h3>
           <h1 className='text-4xl font-bold text-center mt-24 mb-8'>Meet Our Team</h1>
           <div className='flex flex-none hover:flex-1 flex-wrap justify-evenly'>
-            <img src={per1} alt="per1" className='w-64'/>
-            <img src={per2} alt="per2" className='w-64'/>
-            <img src={per3} alt="per3" className='w-64'/>
-            <img src={per4} alt="per4" className='w-64'/>
+            <img src={per1} alt="per1" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+            <img src={per2} alt="per2" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+            <img src={per3} alt="per3" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+            <img src={per4} alt="per4" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
 
           </div>
 

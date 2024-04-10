@@ -3,10 +3,10 @@ import React from 'react';
 
 function Card(props) {
   return (
-    <div className={` rounded-lg shadow-sm ${props.width}`}>
+    <div className={`card-container rounded-lg shadow-sm h-[35rem] ${props.width}`}>
       <div className={`overflow-hidden rounded-lg `}>
         <img
-          className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+          className="w-full  cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
           src={props.thumbnailSrc}
           alt="image"
         />
@@ -17,6 +17,7 @@ function Card(props) {
       <p className={`font-normal text-black p-6 cursor-pointer text-lg duration-300 transition mt-2`}>
         {props.description}
       </p>
+      
     </div>
   );
   
