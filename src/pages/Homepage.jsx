@@ -9,6 +9,11 @@ import image1 from '../assets/hcard1.png'
 import image2 from '../assets/hcard2.png'
 import image3 from '../assets/hcard3.png'
 import image4 from '../assets/hcard4.png'
+import per1 from '../assets/per1.webp'
+import per2 from '../assets/per2.webp'
+import per3 from '../assets/per3.webp'
+import per4 from '../assets/per4.webp'
+import MyCarousel from '../components/MyCarousel'
 const Homepage = () => {
   return (
 
@@ -48,11 +53,6 @@ const Homepage = () => {
         />
       </div>
     </div>
-      
-
-
-
-
 
    <div className="w-screen h-auto grid grid-cols-2 gap-5 overflow-hidden text-justify">
         <div className="flex justify-end items-end bg-cover bg-center h-dvh rounded-r-xl " style={{backgroundImage: `url(${tractor})`}}> 
@@ -100,12 +100,23 @@ const Homepage = () => {
           <img className='w-24' src={img5} alt="" srcset="" />
           <p>MEDIA INSIGHTS</p>
           <p className='text-4xl'>Our Achievements</p>
-          <div>
+          <div className='h-3/4 w-3/4'> 
              <img src={achivement} alt="" srcset="" />
           </div>
         </div>
         
       </div>
+      <div className='ml-40 mr-40'>
+          <h3 className='text-xl mb-2 font-normal tracking-normal'>PROFESSIONAL PEOPLE</h3>
+          <h1 className='text-4xl font-bold text-center mt-24 mb-8'>Meet Our Team</h1>
+          <div className='flex flex-none hover:flex-1 flex-wrap justify-evenly'>
+            <img src={per1} alt="per1" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+            <img src={per2} alt="per2" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+            <img src={per3} alt="per3" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+            <img src={per4} alt="per4" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+          </div>
+      </div>
+      <MyCarousel />
       <Footer/>
     </div>
 

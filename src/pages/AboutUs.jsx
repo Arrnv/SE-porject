@@ -62,29 +62,29 @@ function AboutUs() {
          
          <div className="container mx-auto ">
       <div className="grid gap-14 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-3 sm:p-6 place-items-center ">
-        <div className='onHover hover:bg-[#199747]'>
+        <div className='onHover hover:bg-[#199747] rounded-lg'>
         <Card
           // hover="bg-green-600"
-          width="w-96"
+          width="w-80"
           heading="Briquettes"
           description="Briquettes are bricks madeof leftover bits of wood and sawdust mixed with crop husk, additives and then compressed to give desired shape. These are widely used by industries in boilers . (CV:3800Cal/g)"
           thumbnailSrc={image1}
         />
         </div>
-        <div className='onHover hover:bg-[#199747]'>
+        <div className='onHover hover:bg-[#199747] rounded-lg'>
         <Card
           // hover="bg-green-600"
-          width="w-96"
+          width="w-80"
           heading="Pellets"
           description="A Bio Pellet is a small block of flammable biomass that can be used to produce heat as a fuel,mostly is smaller than briquettes widely used for Restaurants and domestic application.
           (3800Cal/g)"
           thumbnailSrc={image2}
         />
         </div>
-        <div className='onHover hover:bg-[#199747]'>
+        <div className='onHover hover:bg-[#199747] rounded-lg'>
         <Card
           // hover="bg-green-600"
-          width="w-96"
+          width="w-80"
           heading="Cowdung Woodlogs"
           description="It is a wood look alike log made by combination of cow dung and crop residues is fed into the hopper of the machine. These are widely used for last rituals and prayers.
           (CV:2000Cal/g)"
@@ -189,6 +189,7 @@ function AboutUs() {
 
           </div>
 
+
       <div className='ml-16 mr-16 lg:ml-28 lg:mr-28 '>
       <h3 className='text-xl mb-2 mt-24 font-GothamBook text-center tracking-normal'>PROFESSIONAL PEOPLE</h3>
       <h1 className='text-4xl font-GothamBold text-center mt-4 mb-8'>Meet Our Team</h1>
@@ -221,6 +222,7 @@ function AboutUs() {
     <button className="bg-[#199747] hover:bg-green-700 text-green-900 font-semibold hover:text-white py-4 px-8 border border-green-700 hover:border-transparent rounded w-50 h-50 text-xl font-GothamBook">Shop Now</button>
     </div>
   </div>
+
 
   </div>
 
