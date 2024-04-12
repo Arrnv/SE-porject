@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/4.jpg';
-import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
 
 function CheckoutPage() {
   const [cart, setCart] = useState([
@@ -194,12 +192,8 @@ function CheckoutPage() {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
-
-
-
       </div>
     </div>
   );

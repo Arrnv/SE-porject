@@ -8,7 +8,7 @@ import { faShoppingCart, faLink, faStar } from '@fortawesome/free-solid-svg-icon
 function Product() {
     return (
         <div>
-            <div className="bg-green-200 relative h-1/2 screen">
+            <div className="mt-6 bg-green-200 relative h-1/2 screen">
                 <img src={backgroundImage} alt="Background" className="w-full h-1/2 screen object-cover" />
                 <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">shop product</h1>
             </div>
@@ -91,15 +91,15 @@ function Sidebar() {
 
 function ProductRow() {
     const products = [
-        { id: 1, name: 'Biomass Pellets', price: '₹20/Kg', imageUrl: './images/shop/biomass_pellets1.jpg' },
-        { id: 2, name: 'Vermi Compost', price: '₹119/Kg', imageUrl: './images/shop/biomass_pellets1.jpg' },
-        { id: 3, name: 'Vermi Wash', price: '₹150/Kg', imageUrl: './images/shop/biomass_pellets1.jpg' },
-        { id: 4, name: 'Plant Growth booster', price: '₹20/Kg', imageUrl: './images/shop/biomass_pellets1.jpg' },
+        { id: 1, name: 'Biomass Pellets', price: '₹20/Kg', imageUrl: './images/shop/Biomass Pellets.png' },
+        { id: 2, name: 'Vermi Compost', price: '₹119/Kg', imageUrl: './images/shop/biomass_pellets1.png' },
+        { id: 3, name: 'Vermi Wash', price: '₹150/Kg', imageUrl: './images/shop/biomass_pellets1.png' },
+        { id: 4, name: 'Plant Growth booster', price: '₹20/Kg', imageUrl: './images/shop/biomass_pellets1.png' },
         { id: 5, name: 'Biochar Pellets', price: '₹29.99/Kg', imageUrl: 'images/shop/biochar_pellets1.jpg' },
-        { id: 6, name: 'Biochar', price: '₹24.99/Kg', imageUrl: 'images/shop/biochar.jpg' },
-        { id: 7, name: 'Briquettes', price: '₹7.5/Kg', imageUrl: './images/shop/biomass_pellets1.jpg' },
-        { id: 8, name: 'Biomass Reinforced Plastic', price: 'Rate : request on demand', imageUrl: './images/shop/biomass_pellets1.jpg' },
-        { id: 9, name: 'Product 3', price: '$34.99', imageUrl: './images/shop/biomass_pellets1.jpg' },
+        { id: 6, name: 'Biochar', price: '₹24.99/Kg', imageUrl: 'images/shop/Biochar.png' },
+        { id: 7, name: 'Briquettes', price: '₹7.5/Kg', imageUrl: './images/shop/biomass_pellets1.png' },
+        { id: 8, name: 'Biomass Reinforced Plastic', price: 'Rate : request on demand', imageUrl: './images/shop/biomass_pellets1.png' },
+        { id: 9, name: 'Product 3', price: '$34.99', imageUrl: './images/shop/biomass_pellets1.png' },
     ];
 
     return (
