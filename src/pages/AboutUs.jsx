@@ -50,25 +50,8 @@ function AboutUs() {
 
         <div className='ml-16 mr-16 lg:ml-28 lg:mr-28'>
          <h1 className='text-4xl font-GothamBold text-center mt-24 mb-8'>What is it that we do?</h1>
-         <p className='text-xl font-GothamBook font-normal leading-loose tracking-normal text-justify'>India is an agro based country. Agricultural is an important pillar of our economy. Yet, a large number of agro waste post harvest is waste. There is a huge value hidden in this post harvest agro waste. Also the use of rdf waste and legacy waste in cement and steel industries is very inefficient.On the other hand our nation is going through coal crises. We at Hab Biomass Pvt Ltd have developed and innovative mobile unit to convert one ton of agro waste per hour into high GCV biocoal briquettes to be used as fuel in industries. Our innovation acts as a bridge between these two points. We not only supports environment but also give second income to farmer.</p>
-         <h2 className='text-2xl font-GothamMedium mt-2 mb-2 tracking-normal'>Our innovation revolves around 5 major problems</h2>
-          <ul className='text-xl font-GothamBook leading-loose tracking-normal text-justify list-disc ml-6 list-inside'>
-            <li>Disposal of Agro waste by burning</li>
-            <li>Human Intervention and less availiblity of labour in Handeling of Agro Waste.</li>
-            <li>Logistics of loose agro waste, a SCM Error.</li>
-            <li>Centralised Place for hoarding/storage of Waste</li>
-            <li>Sustainable disposal of agro waste by create value out of waste.</li>
-
-          </ul>
-          <h2 className='text-2xl font-GothamMedium mt-2 mb-2 tracking-normal'>Problem Statement</h2>
-          <ol className='text-xl font-GothamBook leading-loose tracking-normal text-justify list-inside ml-6 list-decimal'>
-            
-            <li>Agro waste disposal by burning, which is not only a waste of a useful resource but also causes huge pollution.</li>
-            <li>Human intervention and a scarcity of labour in the handling of agricultural waste.</li>
-            <li>Inefficient logistics of loose agro-waste waste: an SCM error because agro-waste volume is much greater than weight.</li>
-            <li>The availability of storage and hoarding space for agricultural waste.</li>
-
-          </ol>
+        
+         
          </div>
 
          <div className='ml-16 mr-16 lg:ml-28 lg:mr-28'>
@@ -158,10 +141,7 @@ function AboutUs() {
       <img src={per3} className='w-64 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:brightness-75' />
       <figcaption className='text-xl mb-4 mt-2 font-GothamMedium text-center tracking-normal'>DIRECTOR & CRM <br/>Sheetal Jagtap</figcaption>
       </figure>
-      <figure>
-      <img src={per4} className='w-64 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:brightness-75' />
-      <figcaption className='text-xl mb-4 mt-2 font-GothamMedium text-center tracking-normal'>MICROBIOLOGIST <br/>Dr. Shibani Sukhi</figcaption>
-      </figure>
+     
       </div>
       </div>
    
@@ -177,8 +157,6 @@ function AboutUs() {
 
 
   </div>
-
-         <Footer/>
 
 
 

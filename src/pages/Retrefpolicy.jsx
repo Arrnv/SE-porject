@@ -74,8 +74,6 @@ function Retrefpolicy() {
         </div>
 
 
-        
-        <Footer/>
     </div>
   )
 }

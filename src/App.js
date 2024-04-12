@@ -11,6 +11,7 @@ import CheckoutPage from './pages/Cart';
 import PrivateRoute from './PrivateRouting';
 import LoginPage from './pages/Login';
 import SignUpPage from './pages/Signup';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
         
 
       </Routes>
-      
+      <Footer />
     </div>
   );
 }

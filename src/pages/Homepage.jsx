@@ -110,11 +110,11 @@ const Homepage = () => {
             <img src={per1} alt="per1" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
             <img src={per2} alt="per2" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
             <img src={per3} alt="per3" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
-            <img src={per4} alt="per4" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
+         
           </div>
       </div>
       
-      <Footer/>
+
     </div>
     </ParallaxProvider>
    

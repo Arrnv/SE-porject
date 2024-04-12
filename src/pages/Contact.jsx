@@ -62,7 +62,6 @@ const Contact = () => {
                 <p>How all this mistaken idea of denouncing <br />pleasure and praising pain was born and I will <br />complete account of the system.</p>
             </div>
         </div>
-        <Footer/>
     </div>
   )
 }
