@@ -28,7 +28,7 @@ const CARD_STYLE = {
 const MyCarousel = () => {
   return (
     <div className="my-20" style={CONTAINER_STYLE}>
-      <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
+      <ReactCardCarousel autoplay={true} autoplay_speed={5000}>
         <div style={CARD_STYLE}>First Card</div>
         <div style={CARD_STYLE}>Second Card</div>
         <div style={CARD_STYLE}>Third Card</div>
