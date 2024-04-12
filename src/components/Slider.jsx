@@ -1,10 +1,12 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
+
 import 'react-slideshow-image/dist/styles.css';
 import image1 from '../assets/bg_iamge3.avif';
 import image2 from '../assets/plantation-south-east-asia.jpg';
 import image3 from '../assets/bg_image1.png';
 import { Parallax } from 'react-scroll-parallax';
+
 
 const Slider = () => {
   const fadeImages = [
