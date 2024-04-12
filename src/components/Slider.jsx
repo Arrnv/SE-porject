@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import image1 from '../assets/slide1.jpg'
+import image1 from '../assets/slide1.webp'
 import image2 from '../assets/slide2.jpg'
 import image3 from '../assets/slide3.jpg'
 const Slider = () => {

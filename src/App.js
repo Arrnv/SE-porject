@@ -1,13 +1,11 @@
 import './App.css';
 import AboutUs from './pages/AboutUs';
 import Homepage from './pages/Homepage';
-
-
-import Retrefpolicy from './pages/Retrefpolicy'
+import Retrefpolicy from './pages/Retrefpolicy';
 import { Routes,Route } from 'react-router';
-
 import Navbar from '../src/components/Navbar'
 import Contact from './pages/Contact';
+
 function App() {
   return (
     <div className="App">
