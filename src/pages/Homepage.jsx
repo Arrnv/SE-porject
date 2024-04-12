@@ -97,8 +97,8 @@ const Homepage = () => {
           <img className='w-24' src={img5} alt="" srcset="" />
           <p>MEDIA INSIGHTS</p>
           <p className='text-4xl'>Our Achievements</p>
-          <div className='h-3/4 w-3/4'> 
-             <img src={achivement} alt="" srcset="" />
+          <div className=''> 
+             <img src={achivement} className='object-cover ' alt="" srcset="" />
           </div>
         </div>
       </div>

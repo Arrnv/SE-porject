@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import 'flowbite';
-import image2 from '../assets/rearth_logo.png'
+import image2 from '../assets/rearth_logo.png';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +17,7 @@ const Navbar = () => {
         <div className='top-0 left-0 right-0 z-40 fixed'>
             <nav className="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-2">
-                    <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src={image2} className="h-20 w-50" alt="Rearth Logo" />
                         {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Re-Earth</span> */}
                     </a>
@@ -34,7 +33,7 @@ const Navbar = () => {
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
                         </svg>
                     </button>
-                    <div className={`absolute top-full  left-0 w-full bg-white md:block md:relative md:w-auto transition-max-height ease-in-out duration-1000 ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="navbar-default">
+                    <div className={`absolute top-full left-0 w-full bg-white md:block md:relative md:w-auto transition-max-height ease-in-out duration-1000 ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="navbar-default">
                         <ul className="font-medium flex flex-col items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             <li className='text-center'>
                                 <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-GothamBlack" aria-current="page">Home</a>
@@ -78,15 +77,11 @@ const Navbar = () => {
                                 <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-GothamBlack">Sustainability</a>
                             </li>
                             <li>
-
-
                                 <a href="/contact" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-GothamBlack">Contact</a>
-
                             </li>
                             <li>
                                 <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-GothamBlack">Blog</a>
                             </li>
-                          
                         </ul>
                     </div>
                 </div>
