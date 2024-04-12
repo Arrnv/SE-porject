@@ -1,7 +1,6 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import tractor from '../assets/features-3-1-1.jpg'
-import Card from '../components/Card'
 import Footer from '../components/Footer'
 import img5 from '../assets/rearth_logo.png'
 import achivement from '../assets/WhatsApp Image 2024-03-22 at 6.01.42 PM.jpeg'
@@ -13,7 +12,7 @@ import per4 from '../assets/per4.webp'
 import MyCarousel from '../components/MyCarousel'
 import Cards2 from '../components/Cards2'
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
-import Whychooseus from '../components/Whychooseus'
+import tick from '../assets/tick.jpeg'
 
 
 
@@ -72,8 +71,13 @@ const Homepage = () => {
         </div>
         <div className='grid grid-flow-row gap-2 justify-center' >
           <h1 className='text-3xl font-bold'>Why Choose Us</h1>
-          <div>
-            <a href="#" class="block max-w-sm p-6 bg-white border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          <div className='gird grid-cols-2'>
+            <div className='col-span-1'>
+              <img src={tick} className='size-16'/>
+            </div>
+            
+            <a href="#" className="block col-span-1 max-w-sm p-6 bg-white border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            
             <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Increased Productivity</h5>
             <p class="font-normal text-gray-700 dark:text-gray-400">Conversion of Agro Waste into Bio Briquettes</p>
             </a>

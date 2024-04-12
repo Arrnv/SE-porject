@@ -8,11 +8,7 @@ import { Parallax } from 'react-scroll-parallax';
 
 const Slider = () => {
   const fadeImages = [
-    {
-      url: image1,
-      caption: 'Hab Biomass',
-      caption2: 'Private Ltd'
-    },
+    
     {
       url: image2,
       caption: 'Hab Biomass',
@@ -20,6 +16,11 @@ const Slider = () => {
     },
     {
       url: image3,
+      caption: 'Hab Biomass',
+      caption2: 'Private Ltd'
+    },
+    {
+      url: image1,
       caption: 'Hab Biomass',
       caption2: 'Private Ltd'
     },
