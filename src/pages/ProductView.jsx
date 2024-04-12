@@ -1,7 +1,44 @@
 import React, { useState } from "react";
 import backgroundImage from '../assets/4.jpg';
+import { useParams } from 'react-router-dom';
+import { Pallates } from '../Data/products';
+import { Biochar } from '../Data/products';
+import { BioPlastic } from '../Data/products';
+import { Briquettes } from '../Data/products';
+import { VermiCompost } from '../Data/products';
+
+
+
 
 const Product_view = () => {
+
+    const getProductData = (category, productId) => {
+
+        let productData = [];
+        switch (category) {
+            case 'Pallates':
+                productData = Pallates;
+                break;
+            case 'Biochar':
+                productData = Biochar;
+                break;
+            case 'BioPlastic':
+                productData = BioPlastic;
+                break;
+            case 'Briquettes':
+                productData = Briquettes;
+                break;
+            case 'VermiCompost':
+                productData = VermiCompost;
+                break;
+        }
+
+        return productData[productId];
+    };
+
+    const { productCatagory, ProductId } = useParams();
+
+    const data = getProductData(productCatagory, ProductId);
 
     const [currentTab, setCurrentTab] = useState('description');
     const [selectedImage, setSelectedImage] = useState(null);
@@ -99,7 +136,7 @@ const Product_view = () => {
 
 
     const [count, setCount] = useState(1);
-    
+
     const handleIncrement = () => {
         setCount(count + 1);
     };
@@ -112,6 +149,7 @@ const Product_view = () => {
 
     return (
         <div>
+
             <div className="mt-24 bg-green-200 relative h-1/2 screen">
                 <img src={backgroundImage} alt="Background" className="w-full h-1/2 screen object-cover" />
                 <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">shop product</h1>
@@ -124,14 +162,14 @@ const Product_view = () => {
                         <img className="h-20 w-24 p-2 rounded-2xl cursor-pointer transition duration-500 ease-in-out hover:scale-110" src="https://biomassenergytechniques.com/wp-content/uploads/2023/06/BioMass.jpg" alt="Image" onClick={() => handleImageClick('https://biomassenergytechniques.com/wp-content/uploads/2023/06/BioMass.jpg')} />
                         <img className="h-24 w-24 p-2 rounded-2xl cursor-pointer transition duration-500 ease-in-out hover:scale-110" src="https://www.jessleephotos.com/images/640/Teton-spring.jpg" alt="Image" onClick={() => handleImageClick('https://www.innovationnewsnetwork.com/wp-content/uploads/2023/01/shutterstockOselote-_2014282742.jpg')} />
                     </div>
-                    <div className="flex-none w-80 relative">
+                    <div className="flex-none mr-96 w-96 relative">
                         <img src={selectedImage || 'https://media.licdn.com/dms/image/D4D22AQGdJlcBQXnakw/feedshare-shrink_800/0/1701083398415?e=2147483647&v=beta&t=PBRtwDSItvaCGNTF3K-h5iy4z6XKMAkta_9_c2x3rjY'} alt="" className="absolute inset-0 w-full h-full object-cover rounded-lg transition duration-500 ease-in-out hover:scale-110" loading="lazy" />
                     </div>
                 </div>
-                <form class="flex-auto p-6">
+                <form class="flex-auto ml-6 p-6">
                     <div class="flex flex-wrap">
                         <h1 class="flex-auto font-medium text-slate-900">
-                            Hab Biomass
+                            {data.name}
                             <div class="flex items-center mt-2">
                                 <svg class="h-5 w-5 text-lime-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M18.95 8.224a.75.75 0 0 0-1.1-.802l-5.225-.85L10.15 2.45a.75.75 0 0 0-1.351 0l-2.475 4.122-5.225.85a.75.75 0 0 0-.413 1.281l3.775 3.682-1.125 5.213a.75.75 0 0 0 1.088.837l4.65-2.45 4.65 2.45a.75.75 0 0 0 1.088-.837l-1.125-5.213 3.775-3.682a.75.75 0 0 0 .212-.479z" clip-rule="evenodd"></path>
@@ -196,7 +234,7 @@ const Product_view = () => {
                                 </div>
                             </div>
 
-                            <button class="h-10 px-6 font-semibold rounded-full bg-lime-500 text-white hover:text-lime-500 hover:bg-white hover:border-2 hover:border-lime-500" type="submit">
+                            <button className="h-10 px-6 font-semibold rounded-full bg-lime-500 text-white hover:text-lime-500 hover:bg-white hover:border-2 hover:border-lime-500" type="submit">
                                 ADD TO CART
                             </button>
                         </div>

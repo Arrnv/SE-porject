@@ -27,7 +27,8 @@ function App() {
         <Route path='/signup' exact Component={SignUpPage} />
         <Route path='/login' exact Component={LoginPage} />
         <Route path='/products' exact Component={ProductList} />
-        <Route path='/productview' exact Component={Product_view} />
+        <Route path="/productview/:productCatagory/:ProductId" element={<Product_view />} />
+
         <Route path='/addcart' element={<PrivateRoute />}>
           <Route path='/addcart' exact Component={CheckoutPage} />
         </Route>

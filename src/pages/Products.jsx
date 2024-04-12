@@ -4,6 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart, faLink, faStar } from '@fortawesome/free-solid-svg-icons';
+import productsData from '../Data/products';
+import { Pallates } from '../Data/products';
+import { Biochar } from '../Data/products';
+import { BioPlastic } from '../Data/products';
+import { Briquettes } from '../Data/products';
+import { VermiCompost } from '../Data/products';
 
 function Product() {
     return (
@@ -90,235 +96,183 @@ function Sidebar() {
 }
 
 function ProductRow() {
-    const products = [
-        { id: 1, name: 'Biomass Pellets', price: '₹20/Kg', imageUrl: './images/shop/biomass_pellets1.png' },
-        { id: 2, name: 'Vermi Compost', price: '₹119/Kg', imageUrl: './images/shop/VermiCompost.png' },
-        { id: 3, name: 'Vermi Wash', price: '₹150/Kg', imageUrl: './images/shop/Vermiwash.png' },
-        { id: 4, name: 'Plant Growth booster', price: '₹20/Kg', imageUrl: './images/shop/BioPlastic.png' },
-        { id: 5, name: 'Biochar Pellets', price: '₹29.99/Kg', imageUrl: 'images/shop/Biomass Pellets.png' },
-        { id: 6, name: 'Biochar', price: '₹24.99/Kg', imageUrl: 'images/shop/Biochar.png' },
-        { id: 7, name: 'Briquettes', price: '₹7.5/Kg', imageUrl: './images/shop/biomass_pellets1.png' },
-        { id: 8, name: 'Biomass Reinforced Plastic', price: 'Rate : request on demand', imageUrl: './images/shop/biomass_pellets1.png' },
-        { id: 9, name: 'Briquettes', price: '₹34.99/Kg', imageUrl: './images/shop/Briquettes.png' },
-    ];
 
+    const handleProductView = (ProductCategory,ProductId) => {
+        // history.push('/productview', product);
+        // console.log(product)
+        const ProductLink = `/productview/${ProductCategory}/${ProductId}`;
+        window.open(ProductLink, '_blank');
+    };
+    
+    
     return (
         <div className=''>
-            <a className="m-3 flex justify-center items-center text-xl">Vermi Compost</a>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-64" src={products[1].imageUrl} alt={products[1].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[1].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[1].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
-                        </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-48 h-64" src={products[2].imageUrl} alt={products[2].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[2].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[2].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
-                        </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
-                        </div>
-                    </div>
-                </div>
 
-            </div>
             <a className="m-3 flex justify-center items-center text-xl">Pallates</a>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-64" src={products[0].imageUrl} alt={products[0].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[0].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[0].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
+                {Pallates.map((product, index) => (
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
+                        <a onClick={() => handleProductView('Pallates',product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                            <img className="w-64" src={product.imageUrl} alt={product.name} />
+                            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
+                                <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
+                            </div>
                         </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">{product.name}</div>
+                            <p className="text-base" style={{ color: '#8dc63f' }}>
+                                {product.price}
+                            </p>
+                        </div>
+                        <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
+                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                                <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
+                                Add To Cart 
+                            </a>
+                            <div className="flex items-center mt-2">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
+                                        <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
+                                    </svg>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-64 h-52" src={products[4].imageUrl} alt={products[4].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[4].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[4].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
-                        </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                ))}
+
             </div>
+
+
             <a className="m-3 flex justify-center items-center text-xl">Biochar</a>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-64" src={products[5].imageUrl} alt={products[5].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[5].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[5].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
+                {Biochar.map((product, index) => (
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
+                        <a onClick={() => handleProductView('Biochar',product.id)}  rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                            <img className="w-64" src={product.imageUrl} alt={product.name} />
+                            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
+                                <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
+                            </div>
                         </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">{product.name}</div>
+                            <p className="text-base" style={{ color: '#8dc63f' }}>
+                                {product.price}
+                            </p>
+                        </div>
+                        <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
+                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                                <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
+                                Add To Cart
+                            </a>
+                            <div className="flex items-center mt-2">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
+                                        <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
+                                    </svg>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                ))}
             </div>
 
             <a className="m-3 flex justify-center items-center text-xl">Bio Plastic</a>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-64" src={products[3].imageUrl} alt={products[3].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[3].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[3].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
+                {BioPlastic.map((product, index) => (
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
+                        <a onClick={() => handleProductView('BioPlastic',product.id)}  rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                            <img className="w-64" src={product.imageUrl} alt={product.name} />
+                            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
+                                <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
+                            </div>
                         </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">{product.name}</div>
+                            <p className="text-base" style={{ color: '#8dc63f' }}>
+                                {product.price}
+                            </p>
+                        </div>
+                        <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
+                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                                <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
+                                Add To Cart
+                            </a>
+                            <div className="flex items-center mt-2">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
+                                        <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
+                                    </svg>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
 
             <a className="m-3 flex justify-center items-center text-xl">Briquettes</a>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                    <a href="productview" rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
-                        <img className="w-64" src={products[8].imageUrl} alt={products[8].name} />
-                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
-                            <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
-                        </div>
-                    </a>
-                    {/* <div className="mt-2"> */}
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">{products[8].name}</div>
-                        <p className="text-base" style={{ color: '#8dc63f' }}>
-                            {products[8].price}
-                        </p>
-                    </div>
-                    <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                        <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
-                            <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                            Add To Cart
+                {Briquettes.map((product, index) => (
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
+                        <a onClick={() => handleProductView('Briquettes',product.id)}   rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                            <img className="w-64" src={product.imageUrl} alt={product.name} />
+                            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
+                                <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
+                            </div>
                         </a>
-                        <div className="flex items-center mt-2">
-                            {[...Array(5)].map((_, i) => (
-                                <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
-                                    <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
-                                </svg>
-                            ))}
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">{product.name}</div>
+                            <p className="text-base" style={{ color: '#8dc63f' }}>
+                                {product.price}
+                            </p>
+                        </div>
+                        <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
+                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                                <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
+                                Add To Cart
+                            </a>
+                            <div className="flex items-center mt-2">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
+                                        <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
+                                    </svg>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-            
+                ))}
+
+            </div>
+            <a className="m-3 flex justify-center items-center text-xl">Vermi Compost</a>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {VermiCompost.map((product, index) => (
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
+                        <a onClick={() => handleProductView('VermiCompost',product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                            <img className="w-64" src={product.imageUrl} alt={product.name} />
+                            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
+                                <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
+                            </div>
+                        </a>
+                        <div className="px-6 py-4">
+                            <div className="font-bold text-xl mb-2">{product.name}</div>
+                            <p className="text-base" style={{ color: '#8dc63f' }}>
+                                {product.price}
+                            </p>
+                        </div>
+                        <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
+                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                                <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
+                                Add To Cart
+                            </a>
+                            <div className="flex items-center mt-2">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
+                                        <path d="M12 .587l3.515 7.113 7.485 1.086-5.414 5.277 1.278 7.449-6.864-3.613-6.864 3.613 1.278-7.449-5.414-5.277 7.485-1.086z"></path>
+                                    </svg>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
@@ -327,19 +281,14 @@ function ProductRow() {
 
 
 function BestSellers() {
-    const products = [
-        { name: 'Biomass Pellets', price: '₹20/Kg', image: './images/shop/biomass_pellets1.png', rating: 5 },
-        { name: 'Biochar Pellets', price: '$24.00', image: 'images/shop/small_biochar_pellets.jpg', rating: 5 },
-        { name: 'Biochar', price: '$20.00', image: 'images/shop/small_biochar.jpg', rating: 5 },
-    ];
 
     return (
         <div className="p-4">
             <h2 className="text-lg font-semibold ">Best Sellers</h2>
             <div className="mt-2">
-                {products.map((product, index) => (
+                {productsData.map((product, index) => (
                     <div key={index} className="flex items-center mb-4">
-                        <img src={product.image} alt={product.name} className="w-16 h-16 mr-4" />
+                        <img src={product.imageUrl} alt={product.name} className="w-16 h-16 mr-4" />
                         <div>
                             <p className="font-bold">{product.name}</p>
                             <p style={{ color: '#8dc63f' }}>{product.price}</p>
