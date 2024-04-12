@@ -16,7 +16,6 @@ import per4 from '../assets/per4.webp'
 import image5 from '../assets/Paddies-image.jpg'
 import icon1 from '../assets/agriicon.png'
 import absimg from '../assets/aboutus.jpg'
-import border1 from '../assets/border1.png'
 import {motion} from "framer-motion"
 
 
