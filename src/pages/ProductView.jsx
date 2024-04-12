@@ -433,7 +433,6 @@ const Product_view = () => {
                 </div>
             </div>
 
-
         </div>
     )
 

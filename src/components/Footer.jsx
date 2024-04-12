@@ -22,9 +22,10 @@ function Footer() {
           <div>
             <h2 className="text-xl font-GothamMedium mb-4">Products</h2>
             <ul className="list-disc list-inside font-GothamBook">
+              <li>Biochar</li>
+              <li>Pellets</li>
               <li>Briquettes</li>
-              <li>Organic Plant Inputs</li>
-              <li>Waste Management</li>
+              <li>Plastic waste management</li>
             </ul>
           </div>
           {/* Section 4: Policies */}
