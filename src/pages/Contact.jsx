@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import Card from '../components/Card';
 import loc from "../assets/google-309741_1280.png"
 import Footer from '../components/Footer';
+import contactus from '../assets/contactus.avif';
 const Contact = () => {
   return (
     <div>
-      <div class="relative">
-            <img src="https://webneel.com/daily/sites/default/files/images/daily/03-2020/7-nature-photography-landscape-mountain-pawel-kucharski.jpg" alt="Background Image" class="w-full h-[400px] object-cover opacity-70" />
-            <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <h1 className="text-white text-4xl font-bold">CONTACT US</h1>
+      <div class="relative mt-14">
+            <img src={contactus} alt="Background Image" class="w-full h-[400px] object-cover opacity-70" />
+            <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-around">
+            <h1 className="text-white text-4xl font-bold font-GothamBold"></h1>
             </div>
         </div>
-        <div className='flex flex-col text-center items-center justify-center gap-5 my-5'>
-            <h1 className='text-4xl'>Get in touch with us</h1>
+        <div className='flex flex-col items-center justify-center gap-8 my-5'>
+            <h1 className='text-4xl overflow-y-hidden'>Get in touch with us</h1>
             <p className='w-7/12 font-light text-xl '>We recently helped a small business grow from break-even to over $1m profit in less than 2 years. Please find below contact details and contact us today!</p>
         </div>
         <div className='grid md:grid-cols-3 justify-items-center sm:grid-cols-1 sm:gap-4'>

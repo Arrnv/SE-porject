@@ -1,5 +1,5 @@
 import React from 'react'
-import image3 from '../assets/person1.jpg'
+import image3 from '../assets/person1.png'
 import Card from '../components/Card'
 import image1 from '../assets/briquettes.webp'
 import image2 from '../assets/pellets.webp'
@@ -16,6 +16,8 @@ import per4 from '../assets/per4.webp'
 import image5 from '../assets/Paddies-image.jpg'
 import icon1 from '../assets/agriicon.png'
 import absimg from '../assets/aboutus.jpg'
+import border1 from '../assets/border1.png'
+import {motion} from "framer-motion"
 
 
 
@@ -33,7 +35,7 @@ function AboutUs() {
 
         <div className='flex flex-col lg:flex-row'>
     <div className='w-full lg:w-3/5'>
-        <div className='m-16 lg:m-20 lg:ml-28'>
+        <div className='m-16 lg:m-20 lg:ml-28 lg:mr-16'>
             <h3 className='text-xl mb-2 tracking-normal font-GothamMedium'>GET TO KNOW ABOUT US</h3>
             <h1 className='text-5xl leading-normal font-GothamBold tracking-normal'>We Sell High-Quality<br/>Organic Products</h1>
             <h2 className='text-2xl mt-6 mb-6 tracking-normal font-GothamMedium'>We’re Leader in Agriculture Market</h2>
@@ -45,18 +47,18 @@ function AboutUs() {
         </div>
     </div>
 
-    <div className='w-full lg:w-2/5 m-16 lg:m-20 lg:mr-28'>
-        <img src={image3} alt="" className=' h-full object-cover' />
-    </div>
+    <motion.div animate={{scale:1,x:0,animationDelay:3}} initial={{scale:0,x:200}} className='w-full lg:w-2/5 m-16 lg:m-20 lg:mr-28 lg:ml-16'>
+        <img src={image3} alt="" className=' h-full object-fit' />
+    </motion.div>
 </div>
 
-          
-        <div className='ml-16 mr-16 lg:ml-28 lg:mr-28'>
+        <div className='ml-16 mr-16 lg:ml-28 lg:mr-28 '>
         <h1 className='text-4xl font-GothamBold text-center mt-24 mb-8'>What is HAB</h1>
-          <h2 className='text-2xl font-GothamMedium mt-6 mb-6  tracking-normal text-center'> “This company is an outcome of a DREAM” Dream of a WORLD WITHOUT FOSSIL FUELS.</h2>
+          <h2 className='text-2xl font-GothamMedium mt-6 mb-6 tracking-normal text-center'> “This company is an outcome of a DREAM” Dream of a WORLD WITHOUT FOSSIL FUELS.</h2>
           <h3 className='text-xl font-GothamBook font-normal leading-loose tracking-normal text-justify '>HAB is an abbreviation used for: “HALCYON AND BONANZA” Halcyon means Happy & Peaceful, Tranquil,Idyllic Bonanza means Wealth, Good Fortune, Profits. HAB Indicates “HALCYON AND BONANZA” which reflects our organisational ideology i.e. ‘Blend of a Happy and Peaceful Phase of life with Wealth and Prosperity’.</h3>
           <h2 className='text-2xl font-GothamMedium mt-6 mb-6 tracking-normal text-center'>In Short it Means- “Prosperity with Peace”</h2>
         </div>
+        
         <div className='ml-16 mr-16 lg:ml-28 lg:mr-28'>
          <h1 className='text-4xl font-GothamBold text-center mt-24 mb-8'>Our Products</h1>
          
