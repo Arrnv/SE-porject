@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import image2 from '../assets/rearth_logo.png';
+import 'flowbite';
+import image2 from '../assets/rearth_logo.png'
+import Cookies from 'js-cookie';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,6 +14,10 @@ const Navbar = () => {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+    const handleSignOut = ()=>{
+        Cookies.remove('token');
+        window.location.href = '/';
+    }
 
     return (
         <div className='top-0 left-0 right-0 z-40 fixed'>
@@ -39,11 +45,11 @@ const Navbar = () => {
                                 <a href="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-GothamBlack" aria-current="page">Home</a>
                             </li>
                             <li>
-                                <div className="relative">
+                            <div className="relative">
                                     <button 
                                         id="dropdownDefaultButton" 
                                         data-dropdown-toggle="dropdown" 
-                                        className="text-white hover:bg-[#034329] bg-[#199747] focus:ring-4 focus:outline-none focus:ring-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 font-GothamBlack" 
+                                        className="text-white hover:bg-[#034329] bg-[#199747] focus:ring-4 focus:outline-none focus:ring-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" 
                                         type="button" 
                                         onClick={toggleDropdown}
                                     >
@@ -55,16 +61,10 @@ const Navbar = () => {
                                     <div className={`absolute z-10 top-full left-0 bg-white ${isOpen ? '' : 'hidden'} divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
                                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                                             <li>
-                                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-GothamMedium">Products</a>
+                                                <a href="products" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Products</a>
                                             </li>
                                             <li>
-                                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-GothamMedium">Machines</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-GothamMedium">Services</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-GothamMedium">Sign out</a>
+                                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={handleSignOut}>Sign out</a>
                                             </li>
                                         </ul>
                                     </div>
