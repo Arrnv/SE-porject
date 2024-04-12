@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import tractor from '../assets/features-3-1-1.jpg'
+import Card from '../components/Card'
 import Footer from '../components/Footer'
 import img5 from '../assets/rearth_logo.png'
 import achivement from '../assets/WhatsApp Image 2024-03-22 at 6.01.42 PM.jpeg'
@@ -10,9 +11,9 @@ import per2 from '../assets/per2.webp'
 import per3 from '../assets/per3.webp'
 import per4 from '../assets/per4.webp'
 import MyCarousel from '../components/MyCarousel'
-import Cards2 from '../components/Cards2'
+
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
-import tick from '../assets/tick.jpeg'
+
 
 
 
@@ -44,25 +45,10 @@ const Homepage = () => {
 
   return (
     <ParallaxProvider>
-     <div className='overflow-x-hidden mx-auto'>
+    <div className='w-screen mx-auto'>
     <Slider/>
    
-    <Parallax speed={20}>
-      <div className="container my-36 mx-auto px-5 z-10">
-        <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-3 sm:p-8  place-items-center'>
-        {props.map((item, index) => (
-          <Cards2
-            key={index} // It's important to provide a unique key when mapping components
-            url={item.url}
-            heading={item.heading}
-            body={item.body}
-          />
-          ))}
-        </div>
-      </div>
-    </Parallax>
     
-
       <div className="w-screen h-auto grid grid-cols-2 gap-5 overflow-hidden text-justify">
         <div className="flex justify-end items-end bg-cover bg-center h-dvh rounded-r-xl" style={{backgroundImage: `url(${tractor})`}}> 
           <div className='h-52 w-40 bg-[#e5c32a] flex items-center justify-center text-center rounded-tl-xl rounded-br-xl' style={{ fontFamily: 'Gotham, sans-serif' }}>
@@ -71,13 +57,8 @@ const Homepage = () => {
         </div>
         <div className='grid grid-flow-row gap-2 justify-center' >
           <h1 className='text-3xl font-bold'>Why Choose Us</h1>
-          <div className='gird grid-cols-2'>
-            <div className='col-span-1'>
-              <img src={tick} className='size-16'/>
-            </div>
-            
-            <a href="#" className="block col-span-1 max-w-sm p-6 bg-white border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            
+          <div>
+            <a href="#" class="block max-w-sm p-6 bg-white border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Increased Productivity</h5>
             <p class="font-normal text-gray-700 dark:text-gray-400">Conversion of Agro Waste into Bio Briquettes</p>
             </a>
@@ -103,7 +84,7 @@ const Homepage = () => {
         </div>
       </div>
       
-      {/* <Whychooseus /> */}
+    {/* <Whychooseus />   */}
       <div className='w-screen h-auto flex justify-center my-20'>
         <div className='grid grid-cols-1 justify-items-center'>
           <img className='w-24' src={img5} alt="" srcset="" />

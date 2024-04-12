@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import contactus from '../assets/contactus.avif';
 const Contact = () => {
   return (
-    <div>
+    <div className='w-screen '>
       <div class="relative mt-14">
             <img src={contactus} alt="Background Image" class="w-full h-[400px] object-cover opacity-70" />
             <div class="absolute inset-0 bg-green-800 bg-opacity-70 flex items-center justify-around">

@@ -24,8 +24,8 @@ import {motion} from "framer-motion"
 
 function AboutUs() {
   return (
-    <div className='w-screen h-screen mt-8'>
-      <div className='bg-gray-100'>
+    <div className='w-full mt-8'>
+      <div className='w-screen bg-gray-100'>
           <div class="relative w-full">
               <img src={absimg} alt="Background Image" class="w-full h-[400px] object-cover" />
               <div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex items-center justify-around">
