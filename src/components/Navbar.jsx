@@ -20,7 +20,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='top-0 left-0 right-0 z-40 '>
+        <div className='top-0 left-0 right-0 z-40 fixed'>
             <nav className="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-2">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -58,10 +58,16 @@ const Navbar = () => {
                                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
                                         </svg>
                                     </button>
-                                    <div className={`absolute z-10 top-full left-0 bg-white ${isOpen ? '' : 'hidden'} divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
+                                    <div className={`top-full left-0 bg-white ${isOpen ? '' : 'hidden'} divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
                                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                                             <li>
-                                                <a href="products" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Products</a>
+                                                <a href="/products" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Products</a>
+                                            </li>
+                                            <li>
+                                                <a href="/machine" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Machine</a>
+                                            </li>
+                                            <li>
+                                                <a href="/services" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Services</a>
                                             </li>
                                             <li>
                                                 <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={handleSignOut}>Sign out</a>

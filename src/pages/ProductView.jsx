@@ -112,7 +112,7 @@ const Product_view = () => {
 
     return (
         <div>
-            <div className="bg-green-200 relative h-1/2 screen">
+            <div className="mt-24 bg-green-200 relative h-1/2 screen">
                 <img src={backgroundImage} alt="Background" className="w-full h-1/2 screen object-cover" />
                 <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">shop product</h1>
             </div>

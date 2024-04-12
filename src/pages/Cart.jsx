@@ -24,12 +24,10 @@ function CheckoutPage() {
   return (
 
     <div>
-      <div className="bg-green-200 relative">
+      <div className="mt-24 bg-green-200 relative">
         <img src={backgroundImage} alt="Background" className="w-full h-52 object-cover" />
         <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">shop product</h1>
       </div>
-
-
 
       <div className="container mx-auto px-4">
         <div className="bg-blue-100 rounded-lg p-8 mt-6">

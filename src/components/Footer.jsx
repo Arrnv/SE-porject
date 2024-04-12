@@ -8,7 +8,7 @@ function Footer() {
         <div className="grid grid-cols-4 gap-16 pb-16 max-w-7xl mx-auto">
           {/* Section 1: HAB Image and Description */}
           <div>
-          <img src={logo} alt="HAB Logo" className="w-24 h-16 " />
+            <img src={logo} alt="HAB Logo" className="w-24 h-16 " />
             <p className="text-md text-justify font-GothamBook">We are a DPIIT recognised company by Govt of India, under Clean Tech and Green Technology domain.</p>
           </div>
           {/* Section 2: Contact Information */}
@@ -20,7 +20,7 @@ function Footer() {
           </div>
           {/* Section 3: Products */}
           <div>
-            <h2 className="text-xl font-GothamMedium mb-4">Products</h2>
+          <a href="/products" className="text-xl font-GothamMedium mb-4">Products</a>
             <ul className="list-disc list-inside font-GothamBook">
               <li>Biochar</li>
               <li>Pellets</li>
