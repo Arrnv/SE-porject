@@ -5,57 +5,67 @@ import Card from '../components/Card'
 import Footer from '../components/Footer'
 import img5 from '../assets/rearth_logo.png'
 import achivement from '../assets/WhatsApp Image 2024-03-22 at 6.01.42 PM.jpeg'
-import image1 from '../assets/hcard1.png'
-import image2 from '../assets/hcard2.png'
-import image3 from '../assets/hcard3.png'
-import image4 from '../assets/hcard4.png'
+
 import per1 from '../assets/per1.webp'
 import per2 from '../assets/per2.webp'
 import per3 from '../assets/per3.webp'
 import per4 from '../assets/per4.webp'
 import MyCarousel from '../components/MyCarousel'
+import Cards2 from '../components/Cards2'
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
+import Whychooseus from '../components/Whychooseus'
+
+
+
+
 const Homepage = () => {
+
+  const props = [
+    {
+      url: "bg-[url('https://media.contentapi.ea.com/content/dam/eacom/images/2020/09/ea-featured-image-ea-desktop-beta.jpg.adapt.crop191x100.1200w.jpg')]",
+      heading: 'Certificates',
+      body: 'We are certified by govt.of India i.e :DPIIT, NSIC, EIC,ISO, CE, DYMER.'
+    },
+    {
+      url: "bg-[url('https://media.contentapi.ea.com/content/dam/eacom/images/2020/09/ea-featured-image-ea-desktop-beta.jpg.adapt.crop191x100.1200w.jpg')]",
+      heading: 'Technology',
+      body: ' A Mobile unit to convert agriculture unit into high gvc bio coal briquettes.'
+    }, {
+      url: "bg-[url('https://media.contentapi.ea.com/content/dam/eacom/images/2020/09/ea-featured-image-ea-desktop-beta.jpg.adapt.crop191x100.1200w.jpg')]",
+      heading: 'Best Teams',
+      body: 'A team comprising skilled engineers,designers and technicians.'
+    },
+    {
+      url: "bg-[url('https://media.contentapi.ea.com/content/dam/eacom/images/2020/09/ea-featured-image-ea-desktop-beta.jpg.adapt.crop191x100.1200w.jpg')]",
+      heading: 'Our Goal',
+      body: 'We are focused on To make our planet a better place to live in.'
+    },
+    
+  ];
+
   return (
-
-    <div className='overflow-x-hidden mx-auto'>
-
-      
-      <Slider/>
-      <div className="container mx-auto px-5">
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-3 sm:p-8 place-items-center">
-        <Card
-          background="bg-[#f3faff]"
-          width="w-64"
-          heading="Technology"
-          description="A Mobile unit to convert agro unit into high gvc bio coal briquettes."
-          thumbnailSrc={image1}
-        />
-        <Card
-          background="bg-[#fefaf0]"
-          width="w-64"
-          heading="Best Team"
-          description="A team comprising skilled engineers,designers and technicians."
-          thumbnailSrc={image2}
-        />
-        <Card
-          background="bg-[#f3faff]"
-          width="w-64"
-          heading="Certificates"
-          description="We are certified by govt.of India i.e :DPIIT, NSIC, EIC,ISO, CE, DYMER."
-          thumbnailSrc={image3}
-        />
-        <Card
-          background="bg-[#f5e6ff]"
-          width="w-64"
-          heading="Our Goal"
-          description="We're focused on 'To make our planet a better place to live in.'"
-          thumbnailSrc={image4}
-        />
+    <ParallaxProvider>
+     <div className='overflow-x-hidden mx-auto'>
+    <Slider/>
+   
+    <Parallax speed={20}>
+      <div className="container my-36 mx-auto px-5 z-10">
+        <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 p-3 sm:p-8  place-items-center'>
+        {props.map((item, index) => (
+          <Cards2
+            key={index} // It's important to provide a unique key when mapping components
+            url={item.url}
+            heading={item.heading}
+            body={item.body}
+          />
+          ))}
+        </div>
       </div>
-    </div>
+    </Parallax>
+    
 
-   <div className="w-screen h-auto grid grid-cols-2 gap-5 overflow-hidden text-justify">
-        <div className="flex justify-end items-end bg-cover bg-center h-dvh rounded-r-xl " style={{backgroundImage: `url(${tractor})`}}> 
+      <div className="w-screen h-auto grid grid-cols-2 gap-5 overflow-hidden text-justify">
+        <div className="flex justify-end items-end bg-cover bg-center h-dvh rounded-r-xl" style={{backgroundImage: `url(${tractor})`}}> 
           <div className='h-52 w-40 bg-[#e5c32a] flex items-center justify-center text-center rounded-tl-xl rounded-br-xl' style={{ fontFamily: 'Gotham, sans-serif' }}>
               <h3 className="text-2xl font-bold">Agriculture Professional Leaders</h3>
           </div>
@@ -88,6 +98,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      
+      {/* <Whychooseus /> */}
       <div className='w-screen h-auto flex justify-center my-20'>
         <div className='grid grid-cols-1 justify-items-center'>
           <img className='w-24' src={img5} alt="" srcset="" />
@@ -104,9 +116,9 @@ const Homepage = () => {
              <img src={achivement} alt="" srcset="" />
           </div>
         </div>
-        
       </div>
-      <div className='ml-40 mr-40'>
+      <MyCarousel />
+      <div className='ml-40 mr-40 my-10 '>
           <h3 className='text-xl mb-2 font-normal tracking-normal'>PROFESSIONAL PEOPLE</h3>
           <h1 className='text-4xl font-bold text-center mt-24 mb-8'>Meet Our Team</h1>
           <div className='flex flex-none hover:flex-1 flex-wrap justify-evenly'>
@@ -116,9 +128,11 @@ const Homepage = () => {
             <img src={per4} alt="per4" className='w-64 rounded-xl hover:scale-110 ease-in-out duration-300'/>
           </div>
       </div>
-      <MyCarousel />
+      
       <Footer/>
     </div>
+    </ParallaxProvider>
+   
 
   );
 }

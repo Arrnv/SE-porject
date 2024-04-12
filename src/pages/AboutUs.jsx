@@ -22,33 +22,33 @@ import absimg from '../assets/aboutus.jpg'
 
 function AboutUs() {
   return (
-    <div className='w-full h-screen mt-14'>
+    <div className='w-screen h-screen mt-8'>
       <div className='bg-gray-100'>
-        <div class="relative w-full">
-            <img src={absimg} alt="Background Image" class="w-full h-[400px] object-cover" />
-            <div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex items-center justify-around">
-            <h1 class="text-white text-4xl font-bold font-GothamBold">ABOUT US</h1>
-        </div>
-        </div>
+          <div class="relative w-full">
+              <img src={absimg} alt="Background Image" class="w-full h-[400px] object-cover" />
+              <div class="absolute inset-0 bg-gray-800 bg-opacity-70 flex items-center justify-around">
+              <h1 class="text-white text-4xl font-bold font-GothamBold">ABOUT US</h1>
+          </div>
+          </div>
 
         <div className='flex flex-col lg:flex-row'>
-    <div className='w-full lg:w-3/5'>
-        <div className='m-16 lg:m-20 lg:ml-28'>
-            <h3 className='text-xl mb-2 tracking-normal font-GothamMedium'>GET TO KNOW ABOUT US</h3>
-            <h1 className='text-5xl leading-normal font-GothamBold tracking-normal'>We Sell High-Quality<br/>Organic Products</h1>
-            <h2 className='text-2xl mt-6 mb-6 tracking-normal font-GothamMedium'>We’re Leader in Agriculture Market</h2>
-            <p className='text-xl font-GothamBook leading-loose tracking-normal text-justify'>My name is Krunal Jagtap, from Pune India. As we all know climate change is a global problem, adding to which burning of agro waste is a major problem to be addressed.
-            I and my mother, are founder of our company HAB BIOMASS PVT LTD. We have developed and innovative mobile unit to convert one ton of agro waste per hour into biocoal briquettes to be used as fuel in industries.
-            This is a IPR protected product and we have also received a National Award for the same. Along with this, we are among the few people select by Stanford Seed Spark Program 2022, for South Asia Cluster.</p>
-            <p className='text-xl font-GothamMedium leading-normal tracking-normal text-right font-semibold'>-From Director's Desk
-             <br/>(Agrotech Market)</p>
+        <div className='w-full lg:w-3/5'>
+            <div className='m-16 lg:m-20 lg:ml-28'>
+                <h3 className='text-xl mb-2 tracking-normal font-GothamMedium'>GET TO KNOW ABOUT US</h3>
+                <h1 className='text-5xl leading-normal font-GothamBold tracking-normal'>We Sell High-Quality<br/>Organic Products</h1>
+                <h2 className='text-2xl mt-6 mb-6 tracking-normal font-GothamMedium'>We’re Leader in Agriculture Market</h2>
+                <p className='text-xl font-GothamBook leading-loose tracking-normal text-justify'>My name is Krunal Jagtap, from Pune India. As we all know climate change is a global problem, adding to which burning of agro waste is a major problem to be addressed.
+                I and my mother, are founder of our company HAB BIOMASS PVT LTD. We have developed and innovative mobile unit to convert one ton of agro waste per hour into biocoal briquettes to be used as fuel in industries.
+                This is a IPR protected product and we have also received a National Award for the same. Along with this, we are among the few people select by Stanford Seed Spark Program 2022, for South Asia Cluster.</p>
+                <p className='text-xl font-GothamMedium leading-normal tracking-normal text-right font-semibold'>-From Director's Desk
+                <br/>(Agrotech Market)</p>
+            </div>
         </div>
-    </div>
 
-    <div className='w-full lg:w-2/5 m-16 lg:m-20 lg:mr-28'>
-        <img src={image3} alt="" className=' h-full object-cover' />
-    </div>
-</div>
+        <div className='w-full lg:w-2/5 m-16 lg:m-20 lg:mr-28 md:w-full'>
+            <img src={image3} alt="" className=' h-full object-cover' />
+        </div>
+      </div>
 
           
         <div className='ml-16 mr-16 lg:ml-28 lg:mr-28'>
