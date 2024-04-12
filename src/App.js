@@ -5,6 +5,12 @@ import Retrefpolicy from './pages/Retrefpolicy';
 import { Routes,Route } from 'react-router';
 import Navbar from '../src/components/Navbar'
 import Contact from './pages/Contact';
+import ProductList from './pages/Products';
+import Product_view from './pages/ProductView';
+import CheckoutPage from './pages/Cart';
+import PrivateRoute from './PrivateRouting';
+import LoginPage from './pages/Login';
+import SignUpPage from './pages/Signup';
 
 function App() {
   return (
@@ -17,7 +23,13 @@ function App() {
         <Route path='/contact' exact Component={Contact}/>
 
         <Route path='/Retrefpolicy' exact Component={Retrefpolicy}></Route>
-
+        <Route path='/signup' exact Component={SignUpPage} />
+        <Route path='/login' exact Component={LoginPage} />
+        <Route path='/products' exact Component={ProductList} />
+        <Route path='/productview' exact Component={Product_view} />
+        <Route path='/addcart' element={<PrivateRoute />}>
+          <Route path='/addcart' exact Component={CheckoutPage} />
+        </Route>
         
 
       </Routes>
