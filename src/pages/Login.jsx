@@ -19,7 +19,7 @@ const LoginPage = () => {
             });
             const { access_token } = response.data;
             Cookies.set('token', access_token, { expires: 1 }); // expire in 1 day
-            window.location.href = '/addcart';
+            window.location.href = '/products';
         } catch (error) {
             setError('Invalid username or password');
         } finally {

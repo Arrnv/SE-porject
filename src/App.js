@@ -20,9 +20,7 @@ function App() {
       <Routes>
         <Route path='/' exact Component={Homepage}/>
         <Route path='/about' exact Component={AboutUs}/>
-
         <Route path='/contact' exact Component={Contact}/>
-
         <Route path='/Retrefpolicy' exact Component={Retrefpolicy}></Route>
         <Route path='/signup' exact Component={SignUpPage} />
         <Route path='/login' exact Component={LoginPage} />
@@ -32,8 +30,6 @@ function App() {
         <Route path='/addcart' element={<PrivateRoute />}>
           <Route path='/addcart' exact Component={CheckoutPage} />
         </Route>
-        
-
       </Routes>
       <Footer />
     </div>

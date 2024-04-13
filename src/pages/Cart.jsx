@@ -1,34 +1,84 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import backgroundImage from '../assets/4.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
 function CheckoutPage() {
-  const [cart, setCart] = useState([
-    { id: 1, name: "The Innovator's Dilemma", quantity: 1, price: 44.99 },
-    { id: 2, name: 'Good to Great', quantity: 2, price: 44.99 },
-  ]);
+
+  const [ProductDetails, setProductDetails] = useState([])
+
+  const navigate = useNavigate();
+
+  
+
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if (token) {
+      // Make a request to the backend with the token to get user details
+      axios.get('http://127.0.0.1:5000/CartView', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(response => {
+          const groupedProducts = groupProducts(response.data);
+          setProductDetails(groupedProducts);
+          console.log(groupedProducts)
+        })
+        .catch(error => {
+          navigate('/login');
+        });
+    }
+    else {
+      navigate('/login');
+    }
+  }, []);
+
+  const groupProducts = (products) => {
+    const grouped = {};
+    products.forEach(product => {
+      const { name } = product;
+      if (grouped[name]) {
+        grouped[name].count++;
+      } else {
+        grouped[name] = { ...product, count: 1 };
+      }
+    });
+    return Object.values(grouped);
+  };
+
+  const calculateTotalPrice = (price, quantity) => {
+    const numericPrice = parseFloat(price.replace('₹', '').replace('/Kg', ''));
+    return (numericPrice * quantity).toFixed(2);
+  };
 
   const handleQuantityChange = (productId, newQuantity) => {
-    setCart(prevCart => prevCart.map(item =>
-      item.id === productId ? { ...item, quantity: newQuantity } : item
-    ));
+    // setCart(prevCart => prevCart.map(item =>
+    //   item.id === productId ? { ...item, quantity: newQuantity } : item
+    // ));
   };
   const handleRemoveItem = (productId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+    // setCart(prevCart => prevCart.filter(item => item.id !== productId));
   };
-
 
   return (
 
     <div>
+      
       <div className="mt-24 bg-green-200 relative">
         <img src={backgroundImage} alt="Background" className="w-full h-52 object-cover" />
         <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold">shop product</h1>
       </div>
-
+      {/* {ProductDetails.map(item => (
+        <tr key={item.id}>
+              {item.name} , {item.price} , {item.count}
+        </tr>
+      ))} */}
       <div className="container mx-auto px-4">
         <div className="bg-blue-100 rounded-lg p-8 mt-6">
           <div className="relative flex items-center justify-center" style={{ height: "150px", backgroundColor: "rgb(217, 249, 157)", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" }}>
@@ -37,10 +87,6 @@ function CheckoutPage() {
               <p className="text-lg text-gray-600">Your one-stop shop for all your favorite items!</p>
             </div>
           </div>
-
-
-
-
 
           <div className="overflow-x-auto">
             <table className="table-auto w-full border-collapse border border-yellow-800 p-8 mt-6">
@@ -55,7 +101,7 @@ function CheckoutPage() {
                 </tr>
               </thead>
               <tbody>
-                {cart.map(item => (
+                {ProductDetails.map(item => (
                   <tr key={item.id}>
                     <td className="border px-4 py-2">
                       <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
@@ -64,19 +110,17 @@ function CheckoutPage() {
                     <td className="border px-4 py-2 text-center">
                       <input
                         type="number"
-                        value={item.quantity}
+                        value={item.count}
                         onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
                         className="w-16 px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-400"
                       />
                     </td>
-                    <td className="border px-4 py-2 text-center">{item.price.toFixed(2)}</td>
-                    <td className="border px-4 py-2 text-center">{(item.price * item.quantity).toFixed(2)}</td>
+                    <td className="border px-4 py-2 text-center">{item.price}</td>
+                    <td className="border px-4 py-2 text-center">{calculateTotalPrice(item.price, item.count)}</td>
                     <td className="border px-4 py-2 text-center">
-                      {item.available ? (
-                        <FontAwesomeIcon icon={faCheckCircle} className="text-green-500 mr-2" title="Available" />
-                      ) : (
+                      
                         <span className="text-green-500"> Available</span>
-                      )}
+                      
                     </td>
                     <td className="border px-4 py-2 text-center">
                       <button className="text-red-500 hover:text-red-600 focus:outline-none" onClick={() => handleRemoveItem(item.id)}>

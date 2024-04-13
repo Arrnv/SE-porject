@@ -10,7 +10,9 @@ import { Biochar } from '../Data/products';
 import { BioPlastic } from '../Data/products';
 import { Briquettes } from '../Data/products';
 import { VermiCompost } from '../Data/products';
-
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 function Product() {
     return (
         <div>
@@ -96,15 +98,40 @@ function Sidebar() {
 }
 
 function ProductRow() {
-
-    const handleProductView = (ProductCategory,ProductId) => {
-        // history.push('/productview', product);
-        // console.log(product)
+    const navigate = useNavigate();
+    const handleProductView = (ProductCategory, ProductId) => {
         const ProductLink = `/productview/${ProductCategory}/${ProductId}`;
         window.open(ProductLink, '_blank');
     };
-    
-    
+
+    const AddProductToCart = (product) => {
+        const token = Cookies.get('token')
+        if (token) {
+            // Make a request to the backend with the token to get user details
+            axios.post('http://127.0.0.1:5000/AddToCart', {
+                product: product, // Include the product data in the request body
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+                .then(response => {
+                    console.log(response.data);
+                    navigate('/addcart');
+                })
+                .catch(error => {
+                    navigate('/login');
+                });
+        }
+        else {
+            navigate('/login');
+        }
+
+        // const ProductLink = `/productview/${ProductCategory}/${ProductId}`;
+        // window.open(ProductLink, '_blank');
+    };
+
+
     return (
         <div className=''>
 
@@ -112,7 +139,7 @@ function ProductRow() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {Pallates.map((product, index) => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                        <a onClick={() => handleProductView('Pallates',product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                        <a onClick={() => handleProductView('Pallates', product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
                             <img className="w-64" src={product.imageUrl} alt={product.name} />
                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
                                 <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
@@ -125,9 +152,9 @@ function ProductRow() {
                             </p>
                         </div>
                         <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                            <a onClick={() => AddProductToCart(product)} className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
-                                Add To Cart 
+                                Add To Cart
                             </a>
                             <div className="flex items-center mt-2">
                                 {[...Array(5)].map((_, i) => (
@@ -147,7 +174,7 @@ function ProductRow() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {Biochar.map((product, index) => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                        <a onClick={() => handleProductView('Biochar',product.id)}  rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                        <a onClick={() => handleProductView('Biochar', product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
                             <img className="w-64" src={product.imageUrl} alt={product.name} />
                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
                                 <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
@@ -160,10 +187,10 @@ function ProductRow() {
                             </p>
                         </div>
                         <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                            <button href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
                                 Add To Cart
-                            </a>
+                            </button>
                             <div className="flex items-center mt-2">
                                 {[...Array(5)].map((_, i) => (
                                     <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
@@ -180,7 +207,7 @@ function ProductRow() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {BioPlastic.map((product, index) => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                        <a onClick={() => handleProductView('BioPlastic',product.id)}  rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                        <a onClick={() => handleProductView('BioPlastic', product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
                             <img className="w-64" src={product.imageUrl} alt={product.name} />
                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
                                 <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
@@ -213,7 +240,7 @@ function ProductRow() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {Briquettes.map((product, index) => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                        <a onClick={() => handleProductView('Briquettes',product.id)}   rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                        <a onClick={() => handleProductView('Briquettes', product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
                             <img className="w-64" src={product.imageUrl} alt={product.name} />
                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
                                 <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
@@ -246,7 +273,7 @@ function ProductRow() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {VermiCompost.map((product, index) => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg m-2 ml-10">
-                        <a onClick={() => handleProductView('VermiCompost',product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
+                        <a onClick={() => handleProductView('VermiCompost', product.id)} rel="noopener noreferrer" className="hover:opacity-75 relative inline-block">
                             <img className="w-64" src={product.imageUrl} alt={product.name} />
                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300" >
                                 <FontAwesomeIcon icon={faLink} className="text-white text-3xl" style={{ color: '#8dc63f' }} />
