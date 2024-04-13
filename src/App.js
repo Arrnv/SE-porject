@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRouting';
 import LoginPage from './pages/Login';
 import SignUpPage from './pages/Signup';
 import Footer from './components/Footer';
+import BlogSection from './pages/Blogs';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/addcart' element={<PrivateRoute />}>
           <Route path='/addcart' exact Component={CheckoutPage} />
         </Route>
+        <Route path='/blogs'  exact Component={BlogSection}></Route>
       </Routes>
       <Footer />
     </div>

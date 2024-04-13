@@ -117,7 +117,7 @@ function ProductRow() {
             })
                 .then(response => {
                     console.log(response.data);
-                    navigate('/addcart');
+                    window.open('/addcart', '_blank');
                 })
                 .catch(error => {
                     navigate('/login');
@@ -187,10 +187,10 @@ function ProductRow() {
                             </p>
                         </div>
                         <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                            <button href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                            <a onClick={() => AddProductToCart(product)} className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
                                 Add To Cart
-                            </button>
+                            </a>
                             <div className="flex items-center mt-2">
                                 {[...Array(5)].map((_, i) => (
                                     <svg key={i} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 " style={{ color: '#8dc63f' }} viewBox="0 0 24 24">
@@ -220,7 +220,7 @@ function ProductRow() {
                             </p>
                         </div>
                         <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                            <a onClick={() => AddProductToCart(product)} className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
                                 Add To Cart
                             </a>
@@ -253,7 +253,7 @@ function ProductRow() {
                             </p>
                         </div>
                         <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                            <a onClick={() => AddProductToCart(product)} className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
                                 Add To Cart
                             </a>
@@ -286,7 +286,7 @@ function ProductRow() {
                             </p>
                         </div>
                         <div className="px-4 pt-4 pb-2 border-gray-300 flex justify-between items-center">
-                            <a href="addcart" className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
+                            <a onClick={() => AddProductToCart(product)} className="cart-btn text-gray-400 hover:text-light-green-500 hover:underline" >
                                 <FontAwesomeIcon icon={faShoppingCart} className="mr-1 text-lg" />
                                 Add To Cart
                             </a>

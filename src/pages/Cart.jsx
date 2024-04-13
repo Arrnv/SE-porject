@@ -31,7 +31,7 @@ function CheckoutPage() {
           console.log(groupedProducts)
         })
         .catch(error => {
-          navigate('/login');
+          setProductDetails([]);
         });
     }
     else {
@@ -66,6 +66,14 @@ function CheckoutPage() {
     // setCart(prevCart => prevCart.filter(item => item.id !== productId));
   };
 
+  const calculateSubtotal = () => {
+    return ProductDetails.reduce((total, item) => {
+      const numericPrice = parseFloat(item.price.replace('₹', '').replace('/Kg', ''));
+      return total + (numericPrice * item.count);
+    }, 0).toFixed(2);
+  };
+
+  
   return (
 
     <div>
@@ -215,7 +223,7 @@ function CheckoutPage() {
                     </tr>
                     <tr>
                       <td class="border px-4 py-2">Cart Subtotal</td>
-                      <td class="border px-4 py-2">146.00</td>
+                      <td class="border px-4 py-2">{calculateSubtotal()}</td>
                     </tr>
                     <tr>
                       <td class="border px-4 py-2">Shipping and Handling</td>
@@ -223,7 +231,7 @@ function CheckoutPage() {
                     </tr>
                     <tr>
                       <td class="border px-4 py-2">Order Total</td>
-                      <td class="border px-4 py-2">146.00</td>
+                      <td class="border px-4 py-2">{calculateSubtotal()} + Shipping</td>
                     </tr>
                   </tbody>
                 </table>
